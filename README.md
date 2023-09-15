@@ -2,7 +2,7 @@
 
 #### AI-Powered Discord Chatbot
 
-It is powered by the __GPT-3.5 Turbo__ model from OpenAI.
+>It is powered by the __GPT-3.5 Turbo__ model from OpenAI.
 
 By creating a config.json file, you can set up your own bot with your credentials.
 
