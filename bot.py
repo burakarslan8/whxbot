@@ -14,13 +14,15 @@ with open('config.json') as f:
     openai.api_key = config['ai-api-key']
     bot_token = config['bot-token']
     context = config['context']
+    command = config['command']
+    about = config['about']
 
 conversation_history = [{"role": "system", "content": context}]
 
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
-    activity = discord.Game(name="I'm here to chat. Use !whx to say hi!")
+    activity = discord.Game(name=about)
     await client.change_presence(activity=activity)
 
 @client.event
@@ -28,7 +30,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if message.content.startswith('!whx'):
+    if message.content.startswith(f'!{command}'):
         question = message.content[5:]
 
         conversation_history.append({"role": "user", "content": question})
