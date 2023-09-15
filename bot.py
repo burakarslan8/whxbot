@@ -20,6 +20,8 @@ conversation_history = [{"role": "system", "content": context}]
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
+    activity = discord.Game(name="I'm here to chat. Use !whx to say hi!")
+    await client.change_presence(activity=activity)
 
 @client.event
 async def on_message(message):
