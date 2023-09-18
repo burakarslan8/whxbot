@@ -6,7 +6,7 @@ COPY . /bot
 
 RUN pip install -r requirements.txt
 
-EXPOSE 80
+EXPOSE 447
 
 ENV NAME World
 
